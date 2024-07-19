@@ -154,8 +154,18 @@ begin
 end;
 
 function TPessoa.Delete: iPessoa;
+var
+  Resp : IResponse;
 begin
+  Resp := TRequest.New.BaseURL('http://localhost:9000/v1/')
+              .Resource('pessoa/' + IntToStr(codigo))
+              .Accept('application/json')
+            .Delete;
 
+  if Resp.StatusCode <> 200 then
+    raise Exception.Create('Status Code: #' + Resp.StatusCode.ToString + #13+#13 + Resp.Content )
+  else
+    Application.MessageBox(PChar('Deletado com sucesso!'),'Atenção',MB_OK+MB_ICONINFORMATION);
 end;
 
 function TPessoa.codigo (Value : Integer) : iPessoa;

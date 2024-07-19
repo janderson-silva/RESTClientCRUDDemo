@@ -22,30 +22,51 @@ object frmCadastro: TfrmCadastro
     Height = 50
     Align = alBottom
     BevelOuter = bvNone
+    ParentColor = True
     TabOrder = 0
-    ExplicitTop = 388
-    ExplicitWidth = 618
-    object btnCancelar: TButton
-      AlignWithMargins = True
-      Left = 154
-      Top = 3
-      Width = 145
-      Height = 44
-      Align = alLeft
-      Caption = 'Cancelar'
-      TabOrder = 0
-      OnClick = btnCancelarClick
-    end
-    object btnSalvar: TButton
+    object pnlSalvar: TPanel
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 145
+      Width = 120
       Height = 44
+      Cursor = crHandPoint
       Align = alLeft
+      BevelOuter = bvNone
       Caption = 'Salvar'
+      Color = 5540912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      StyleElements = []
+      OnClick = pnlSalvarClick
+    end
+    object pnlCancelar: TPanel
+      AlignWithMargins = True
+      Left = 129
+      Top = 3
+      Width = 120
+      Height = 44
+      Cursor = crHandPoint
+      Align = alLeft
+      BevelOuter = bvNone
+      Caption = 'Cancelar'
+      Color = 923248
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
       TabOrder = 1
-      OnClick = btnSalvarClick
+      StyleElements = []
+      OnClick = pnlCancelarClick
     end
   end
   object Panel2: TPanel
@@ -57,10 +78,6 @@ object frmCadastro: TfrmCadastro
     BevelOuter = bvNone
     ParentColor = True
     TabOrder = 1
-    ExplicitLeft = 264
-    ExplicitTop = 96
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object edtNome: TLabeledEdit
       Left = 30
       Top = 40

@@ -23,35 +23,71 @@ object frmPrincipal: TfrmPrincipal
     BevelOuter = bvNone
     ParentColor = True
     TabOrder = 0
-    ExplicitTop = 388
-    ExplicitWidth = 618
-    object btnEditar: TButton
-      AlignWithMargins = True
-      Left = 154
-      Top = 3
-      Width = 145
-      Height = 44
-      Align = alLeft
-      Caption = 'Editar'
-      TabOrder = 0
-      OnClick = btnEditarClick
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitHeight = 41
-    end
-    object btnCadastrar: TButton
+    object pnlNovo: TPanel
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 145
+      Width = 120
       Height = 44
+      Cursor = crHandPoint
       Align = alLeft
-      Caption = 'Cadastrar'
+      BevelOuter = bvNone
+      Caption = 'Novo'
+      Color = 5540912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      StyleElements = []
+      OnClick = pnlNovoClick
+    end
+    object pnlEditar: TPanel
+      AlignWithMargins = True
+      Left = 129
+      Top = 3
+      Width = 120
+      Height = 44
+      Cursor = crHandPoint
+      Align = alLeft
+      BevelOuter = bvNone
+      Caption = 'Editar'
+      Color = 2401504
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
       TabOrder = 1
-      OnClick = btnCadastrarClick
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitHeight = 41
+      StyleElements = []
+      OnClick = pnlEditarClick
+    end
+    object pnlExcluir: TPanel
+      AlignWithMargins = True
+      Left = 255
+      Top = 3
+      Width = 120
+      Height = 44
+      Cursor = crHandPoint
+      Align = alLeft
+      BevelOuter = bvNone
+      Caption = 'Excluir'
+      Color = 923248
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 2
+      StyleElements = []
+      OnClick = pnlExcluirClick
     end
   end
   object Panel2: TPanel
@@ -64,17 +100,27 @@ object frmPrincipal: TfrmPrincipal
     BevelOuter = bvNone
     ParentColor = True
     TabOrder = 1
-    ExplicitWidth = 618
-    object btnListarClientes: TButton
+    object pnlFiltrar: TPanel
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 145
+      Width = 120
       Height = 44
+      Cursor = crHandPoint
       Align = alLeft
+      BevelOuter = bvNone
       Caption = 'Listar Clientes'
+      Color = 5540912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
       TabOrder = 0
-      OnClick = btnListarClientesClick
+      StyleElements = []
+      OnClick = pnlFiltrarClick
     end
   end
   object DBGrid1: TDBGrid
@@ -85,6 +131,7 @@ object frmPrincipal: TfrmPrincipal
     Height = 343
     Align = alClient
     DataSource = DataSource1
+    DrawingStyle = gdsClassic
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

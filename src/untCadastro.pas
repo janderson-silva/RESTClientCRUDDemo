@@ -13,15 +13,15 @@ uses
 type
   TfrmCadastro = class(TForm)
     Panel1: TPanel;
-    btnCancelar: TButton;
-    btnSalvar: TButton;
     Panel2: TPanel;
     edtNome: TLabeledEdit;
     edtApelido: TLabeledEdit;
     edtCPF: TLabeledEdit;
-    procedure btnCancelarClick(Sender: TObject);
+    pnlSalvar: TPanel;
+    pnlCancelar: TPanel;
     procedure FormShow(Sender: TObject);
-    procedure btnSalvarClick(Sender: TObject);
+    procedure pnlSalvarClick(Sender: TObject);
+    procedure pnlCancelarClick(Sender: TObject);
   private
     { Private declarations }
     procedure CadastrarPessoa;
@@ -58,21 +58,6 @@ begin
       Exit;
     end;
   end;
-end;
-
-procedure TfrmCadastro.btnCancelarClick(Sender: TObject);
-begin
-  Close;
-end;
-
-procedure TfrmCadastro.btnSalvarClick(Sender: TObject);
-begin
-  if codigo > 0 then
-    AtualizarPessoa
-  else
-    CadastrarPessoa;
-
-  Close;
 end;
 
 procedure TfrmCadastro.CadastrarPessoa;
@@ -131,6 +116,21 @@ procedure TfrmCadastro.FormShow(Sender: TObject);
 begin
   if codigo > 0 then
     CarregarPessoa;
+end;
+
+procedure TfrmCadastro.pnlCancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmCadastro.pnlSalvarClick(Sender: TObject);
+begin
+  if codigo > 0 then
+    AtualizarPessoa
+  else
+    CadastrarPessoa;
+
+  Close;
 end;
 
 end.
